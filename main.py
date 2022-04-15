@@ -44,9 +44,6 @@ def get_secrets():
     response = secrets_client.access_secret_version(request={"name": name})
 
     payload = response.payload.data.decode("UTF-8")
-    print(f'payload: {payload}')
-    print(f'payload type: {type(payload)}')
-    print(f'payload: {json.loads(payload)}')
     return json.loads(payload)
 
 
